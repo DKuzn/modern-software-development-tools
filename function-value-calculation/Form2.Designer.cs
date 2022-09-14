@@ -63,7 +63,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(343, 50);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Данная программа распространяется\r\nна условия лицензии MIT.";
+            this.label3.Text = "Данная программа распространяется\r\nна условиях лицензии MIT.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
@@ -85,7 +85,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О программе";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace function_value_calculation
 {
     public partial class Form1 : Form
@@ -22,7 +20,7 @@ namespace function_value_calculation
                 double calculatedValue = Math.Round(calculateValue(inputValue), 3);
                 labelFunctionValue.Text = Convert.ToString(calculatedValue);
             }
-            catch (System.FormatException)
+            catch (FormatException)
             {
                 labelFunctionValue.Text = "¬ведены неверные данные";
             }

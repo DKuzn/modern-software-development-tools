@@ -35,14 +35,34 @@ namespace function_graphic_plotting
 
         private void buttonPlot_Click(object sender, EventArgs e)
         {
-            _plot.Points.Clear();
-            double startValue = Convert.ToDouble(this.startValue.Text);
-            double endValue = Convert.ToDouble(this.endValue.Text);
-            double stepValue = Convert.ToDouble(this.stepValue.Text);
-            for (var i = startValue; i <= endValue; i += stepValue)
+            try
             {
-                _plot.Points.AddXY(i, calculateValue(i));
+                _plot.Points.Clear();
+                double startValue = Convert.ToDouble(this.startValue.Text);
+                double endValue = Convert.ToDouble(this.endValue.Text);
+                double stepValue = Convert.ToDouble(this.stepValue.Text);
+                this.startValue.BackColor = Color.White;
+                this.endValue.BackColor = Color.White;
+                this.stepValue.BackColor = Color.White;
+                this.startValue.ForeColor = Color.Black;
+                this.endValue.ForeColor = Color.Black;
+                this.stepValue.ForeColor = Color.Black;
+                for (var i = startValue; i <= endValue; i += stepValue)
+                {
+                    _plot.Points.AddXY(i, calculateValue(i));
+                }
             }
+            catch
+            {
+                this.startValue.BackColor = Color.Red;
+                this.endValue.BackColor = Color.Red;
+                this.stepValue.BackColor = Color.Red;
+                this.startValue.ForeColor = Color.White;
+                this.endValue.ForeColor = Color.White;
+                this.stepValue.ForeColor = Color.White;
+                this.buttonPlot.Enabled = false;
+            }
+
         }
 
         private void buttonType_CheckedChanged(object sender, EventArgs e)
